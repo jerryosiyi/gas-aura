@@ -19,11 +19,6 @@ public:
 	AAuraCharacterBase();
 
 protected:
-	virtual void BeginPlay() override;
-
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
-
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<USkeletalMeshComponent> Weapon;
 
@@ -32,4 +27,12 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
+	
+	virtual void BeginPlay() override;
+
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+	
+	virtual void InitAbilityActorInfo();
 };
