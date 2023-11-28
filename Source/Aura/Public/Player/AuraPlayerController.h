@@ -35,8 +35,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputAction> MoveAction;
 
-	TObjectPtr<IAuraEnemyInterface> LastActor;
-	TObjectPtr<IAuraEnemyInterface> ThisActor;
+	IAuraEnemyInterface* LastActor;
+	IAuraEnemyInterface* ThisActor;
 
 	void Move(const FInputActionValue& InputActionValue);
 
